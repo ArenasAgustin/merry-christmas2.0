@@ -1,5 +1,5 @@
-$width-container: 25em;
-$height-container: 31.25em;
+$width-container: 31.25em;
+$height-container: 37.5em;
 $size-log: calc(.2 * $width-container);
 $leaves-width: $width-container;
 $leaves-height: calc(.7 * $height-container);
@@ -10,14 +10,13 @@ $mask-leaves: conic-gradient(transparent 0 135deg,
 .container {
     width: $width-container;
     height: $height-container;
-    background: aquamarine;
     display: grid;
     justify-items: center;
     align-content: center;
     overflow: hidden;
     position: relative;
 
-    .star-container {
+    & .star-container {
         width: 85px;
         height: 85px;
         position: absolute;
@@ -31,7 +30,7 @@ $mask-leaves: conic-gradient(transparent 0 135deg,
             height: 100%;
             background: yellow;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-          }
+        }
     }
 
     & .tree {
@@ -92,20 +91,6 @@ $mask-leaves: conic-gradient(transparent 0 135deg,
                 top: 0;
                 border-radius: 40% / 15%;
             }
-
-
-
-            /* &.large::after {
-                content: "";
-                display: block;
-                background: #0003;
-                width: 100%;
-                height: 100%;
-                transform: translateY($offset);
-                position: absolute;
-                top: 0;
-                border-radius: $offset-radius;
-            } */
         }
 
         & .log {
