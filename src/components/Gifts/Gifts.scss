@@ -1,0 +1,48 @@
+.gift {
+    $ribbon-gradient:
+        linear-gradient(to right,
+            transparent 0 40%,
+            #1D6468 40% 60%,
+            transparent 60%);
+
+    width: 100px;
+    height: 100px;
+    background-color: var(--color);
+    background-image: $ribbon-gradient;
+    position: relative;
+    transform: translate(var(--offset-x), 0);
+    z-index: 25;
+    margin: 0 2em;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 30%;
+        height: 100%;
+        background:
+            linear-gradient(#0004, #0004),
+            $ribbon-gradient,
+            linear-gradient(var(--color), var(--color));
+        transform: translateX(300%);
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 120%;
+        height: 20%;
+        position: absolute;
+        top: -10px;
+        border-bottom: 4px solid #0001;
+        background:
+            linear-gradient(to right,
+                #9992 33%,
+                $ribbon-gradient 33% 50%,
+                #9992 30% 75%,
+                #1113 75% 85%,
+                $ribbon-gradient 85% 90%,
+                #1113 90% 100%),
+            linear-gradient(var(--color), var(--color));
+        transition: transform 0.5s ease-in-out;
+    }
+}
