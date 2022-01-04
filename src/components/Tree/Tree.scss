@@ -1,0 +1,84 @@
+$width-container: 400px;
+$height-container: 500px;
+$size-log: calc(.2 * $width-container);
+$leaves-width: $width-container;
+$leaves-height: calc(.7 * $height-container);
+$mask-leaves: conic-gradient(transparent 0 135deg,
+    #000 135deg 225deg,
+    transparent 225deg);
+
+.tree-container {
+    width: $width-container;
+    height: $height-container;
+    background: aquamarine;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+
+    & .tree {
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        position: absolute;
+        bottom: 0;
+
+        & .leaves {
+            width: $leaves-width;
+            height: $leaves-height;
+            background: #488400;
+            z-index: 5;
+            -webkit-mask-image: $mask-leaves;
+            border-radius: 80% / 30%;
+
+            &:before {
+                content: "";
+                display: block;
+                width: 50%;
+                height: 100%;
+                background: #fff2;
+            }
+
+            &.small {
+                transform: translateY(160%) scale(.75);
+                z-index: 7;
+                background: #74A700;
+            }
+
+            &.medium {
+                transform: translateY(80%) scale(.85);
+                z-index: 6;
+                background: #5E9601;
+            }
+        }
+
+        & .log {
+            width: $size-log;
+            height: $size-log;
+            background: #633214;
+            border-radius: 5px;
+            transform: translateY(-10px);
+            overflow: hidden;
+            position: relative;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 50%;
+                height: 100%;
+                background: #9F4F2A;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                background: #0005;
+                width: 100%;
+                height: 30%;
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+}
