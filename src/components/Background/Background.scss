@@ -1,0 +1,19 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#2980b9 0%, white 100%);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    & .snowflake{
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+    }
+}
