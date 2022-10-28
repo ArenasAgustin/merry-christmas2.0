@@ -4,4 +4,4 @@ Proyecto festejar que se aserca la época navideña.
 
 ## Link del deploy
 
-https://arenasagustin.github.io/merry-christmas/
+https://arenasagustin.github.io/merry-christmas2.0/
